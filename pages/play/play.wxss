@@ -1,0 +1,234 @@
+/* pages/play/play.wxss */
+.clearFix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.lt{
+  float:left;
+}
+.rt{
+  float:right;
+}
+page{
+  height: 100%;
+}
+.main{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden; 
+}
+.play-container{
+  position: relative;
+  height: 421.875rpx;
+  width:750rpx;
+}
+video{
+  width: 100%;
+  height: 421.875rpx;
+}
+.cover-mengbang-1{
+  position: absolute;
+  left:0px;
+  top:0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+.cover-mengbang-2{
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+}
+.isPlay-btn{
+  position:absolute;
+  top:50%;
+  left: 50%;
+  z-index: 100;
+  transform:translate(-50%,-50%);
+  text-align: center;
+  width:277rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  border-radius: 33rpx;
+  background: #FF9B29;
+  color:#fff;
+  font-size: 26rpx;
+}
+.container{
+  padding: 24rpx 24rpx 0rpx;
+  box-sizing: border-box;
+  /* height: 100%; */
+  /* flex:1; */
+  /* overflow: auto; */
+}
+.topic-title{
+  margin-top:5rpx;
+  margin-bottom: 24rpx;
+  font-family: "PingFang-SC-Bold";
+  font-size: 36rpx;
+  color:#333;
+  line-height:1;
+}
+.topic-intro{
+  position: relative;
+  font-size: 28rpx;
+  overflow: hidden;
+  font-family: "PingFang-SC-Regular";
+  color:#666;
+  line-height:1;
+}
+.text-ellipsis{
+  position:absolute;
+  display: inline-block;
+  width: 30rpx;
+  font-size: 30rpx;
+  line-height: 44rpx;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+}
+.icon_down{
+  width: 35rpx;
+  float: right;
+}
+/* 分割线 */
+.line{
+  border-top:1px solid #F0F0F0;
+  margin-top:34rpx;
+  margin-bottom:34rpx;
+}
+.song-list{
+  border-bottom:1px solid #F0F0F0;
+  padding-bottom: 10rpx;
+  margin-bottom: 20rpx;
+  margin-top:20rpx;
+}
+.song-list-header{
+  font-size: 28rpx;
+  color:#333;
+}
+.xuanji{
+  vertical-align: middle;
+  font-size: 30rpx;
+  font-family: "PingFang-SC-Medium";
+}
+.icon_list{
+  position:relative;
+  top:5rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 12rpx;
+}
+.song-total{
+  font-size: 28rpx;
+  font-family: "PingFang-SC-Regular";
+}
+.scroll-container{
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top:36rpx;
+}
+.song-item{
+  width: 264rpx;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 18rpx;
+   text-align:center;
+}
+.song-poster{
+  margin-bottom: 10rpx;
+}
+.song-poster-img{
+  width: 252rpx;
+  height: 160rpx;
+  border: 6rpx solid transparent;
+  border-radius: 15rpx;
+  display: block;
+}
+.song-title{
+  display: inline-block;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  color:#5F5F5F;
+  font-size: 28rpx;
+  text-overflow: ellipsis;
+  line-height: 1;
+}
+/* 推荐专辑 */
+.topic-list-header{
+  margin-bottom:36rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-family: "PingFang-SC-Regular";
+}
+.icon_rec{
+  position:relative;
+  top:5rpx;
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+}
+.topic-item{
+  margin-bottom:36rpx;
+}
+.topic-poster{
+  display:inline-block;
+  vertical-align: middle;
+  width:258rpx;
+  height: 160rpx;
+  margin-right:28rpx;
+  overflow: hidden;
+  border-radius: 15rpx;
+}
+.topic-poster-img{
+  width:258rpx;
+}
+.topic-info{
+  display: inline-block;
+  vertical-align: middle;
+}
+.topic-info-title{
+  font-size: 32rpx;
+  line-height: 52rpx;
+}
+.topic-info-subtitle{
+  font-size: 24rpx;
+  line-height: 44rpx;
+  color:#959595;
+}
+.now-play{
+  border:6rpx solid #41C6FF;
+}
+.innerkefu{
+  margin:30rpx 11rpx;
+}
+.innerkefu button{
+   background-color:transparent;   
+  margin:0;
+  padding:0;
+  border:0;
+  outline:none;
+  
+}
+.innerkefu button image{
+  width:100%;
+  height:60rpx;
+  display: block;
+}
+button::after {
+  border: 0;
+}
+
+.ad-container{
+  margin-bottom:20rpx;
+  min-height:200rpx;
+}

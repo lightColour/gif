@@ -1,0 +1,21 @@
+<scroll-view class="rec-container" scroll-y>
+  <view class='rec-top'>
+    <view class='rec-top-left'>
+      <image src='{{rectop[0].imgUrl}}' mode='widthFix'></image>
+    </view>
+    <view class='rec-top-right'>
+      <image src='{{rectop[1].imgUrl}}' mode='widthFix' style='margin-bottom:8rpx;'></image>
+      <image src='{{rectop[1].imgUrl}}' mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='rec-classify'>
+    <view class='rec-classify-item' wx:for="{{classifyItems}}">
+      <view>
+        <image src='{{item.imgUrl}}' mode='widthFix'></image>
+      </view>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  <index-columnplate wx:for='{{reclist}}' reclistitem='{{item}}'></index-columnplate>
+  <index-recommond></index-recommond>
+</scroll-view>

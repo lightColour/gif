@@ -1,0 +1,24 @@
+/* components/songitem/songitem.wxss */
+.song-item{
+  padding:40rpx 40rpx;
+  padding-bottom: 0;
+  display: flex;
+}
+.song-item .left-img{
+  flex:28;
+}
+.song-item .left-img image{
+  width: 100%;
+}
+.song-item .right-font{
+  padding-left:20rpx;
+  flex:39;
+}
+/* .song-item .right-font .song-title{
+}
+.song-item .right-font .song-des{
+
+}
+.song-item .right-font .song-much{
+
+} */

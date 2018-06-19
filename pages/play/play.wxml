@@ -1,0 +1,67 @@
+<view class='main'>
+  <view class='play-container'>
+    <video src='{{VideoUrl}}' autoplay='{{isAutoPlay}}' objectFit='fill' id='main-video' bindended='changeNextSong' bindpause="pauseEvent">
+      <cover-image class='cover-mengbang-1' src='{{PosterImg}}' hidden='{{isHidden || isiOS}}'></cover-image>
+      <cover-view class='cover-mengbang-2' hidden='{{isHidden}}'></cover-view>
+      <cover-view class='isPlay-btn' hidden='{{isHidden}}' bindtap='stillPlay'>使用流量播放</cover-view> 
+    </video>
+  </view>
+  <scroll-view class='container' scroll-y style='height:{{playInfoHeight}}'>
+    <view class='topic-detail clearFix'>
+      <view class='topic-title'>{{TopicDetail.Name}}</view>
+      <view class='topic-intro' style='max-height:{{maxHeight}}'>{{TopicDetail.Desc}}
+        <text class='text-ellipsis' wx:if='{{isEllipsisShow}}'>...</text>
+      </view>
+      <image wx:if='{{isSpreadBtnShow}}' class='icon_down' src='../../img/icon_down@3x.png' mode='widthFix' bindtap='spreadDes' style='transform: rotate({{rotateDeg}}deg)'></image>
+    </view>
+     <view bindtap='reportContact' class='innerkefu' wx:if="{{showContact}}"><button open-type="contact" session-from="{{contactMsg}}"><image src='../../img/downloadwatch.png'></image></button></view> 
+    <!-- <view class='line'></view> -->
+    <view class='song-list'>
+      <view class='song-list-header clearFix'>
+        <view class='lt xuanji'>
+          <image class='icon_list' src='../../img/icon_list@2x.png' mode='widthFix'></image>
+          <text>选集</text>
+        </view>
+        <view class='rt song-total'>
+          <text>{{countText}}</text>
+        </view>
+      </view>
+      <!-- 单曲列表 -->
+      <scroll-view scroll-x='true' class='scroll-container' scroll-into-view='to_{{ThisSongId}}' scroll-with-animation='{{true}}'>
+        <view>
+          <view class='song-item' wx:for="{{MediaList}}" wx:key="song" id='to_{{item.ID}}' data-songId='{{item.ID}}' data-song='{{item}}' data-key='{{item.IQYKey}}' data-posterUrl='{{item.Img}}' bindtap='changeSong'>
+          <view class='song-poster'>
+              <image class='song-poster-img {{item.ID==ThisSongId?"now-play":""}}' src='{{item.Img}}' mode='widthFix'></image>
+            </view>
+            <view class='song-title'>
+            <text class='song-title-no'>{{index+1}}、</text>
+            <text>{{item.Name}}</text>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="ad-container">
+      <ad unit-id="adunit-d74335ed4329c103" wx-if="{{showAd}}"></ad>
+    </view>
+    <!-- 推荐专辑 -->
+    <view class='topic-list'>
+      <view class='topic-list-header'>
+      <image class='icon_rec' src='../../img/icon_rec@2x.png' mode='widthFix'></image>
+      <text>为你推荐</text>
+      </view>
+      <view wx:for='{{TopicList}}' wx:key="song" data-TopicId='{{item.ID}}' data-SongId='{{-1}}' bindtap='toPlay' class='topic-item'>
+        <view class='topic-poster'>
+          <image class='topic-poster-img' src='{{item.Img}}' mode='widthFix'></image>
+        </view>
+        <view class='topic-info'>
+          <view class='topic-info-title'>{{item.Name}}</view>
+          <view class='topic-info-subtitle'>
+            <view>{{item.Desc}}</view>
+            <view>更新至{{item.VideoCount}}集</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

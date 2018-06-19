@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "index-columnplate": "../../components/columnplate/columnplate",
+    "index-recommond": "../../components/recommond/recommond"
+
+  }
+}

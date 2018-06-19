@@ -1,0 +1,17 @@
+<!--components/songitem/songitem.wxml-->
+<view class='song-item'>
+  <view class='left-img'>
+     <image mode='widthFix'  src='http://via.placeholder.com/242x134'></image>
+  </view>
+  <view class='right-font'>
+    <view class='song-title'>
+      <text>万圣节</text>
+    </view>
+    <view class='song-des'>
+      <text>轻松旋律郎朗上口</text>
+    </view>
+    <view class='song-much'>
+      <text>更新直23级</text>
+    </view>
+  </view>
+</view>

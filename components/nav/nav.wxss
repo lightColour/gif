@@ -1,0 +1,18 @@
+.index-nav{
+  display: flex;
+  background: #fff;
+  padding: 20rpx 0rpx 0rpx;
+}
+.index-nav-item{
+  flex:1;
+  text-align: center;
+}
+.index-nav-active{
+  color: blue;
+}
+.index-nav-active .nav-bottom-indicator{
+  width: 20%;
+  height:5rpx;
+  margin:10rpx auto 0rpx;
+  background: blue;
+}

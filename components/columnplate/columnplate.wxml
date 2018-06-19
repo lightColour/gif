@@ -1,0 +1,18 @@
+<view class='columnplate-container'>
+  <view class='head'>
+    <text class='columnplate-title'>{{}}</text>
+    <view class='more'>
+      <text>更多</text>
+      <image src='../../img/icon_more.png'></image>
+    </view>
+  </view>
+  <view class='content'>
+   <view class='content-item' wx:for='{{reclistitem}}'>
+    <view>
+      <image mode='widthFix' src='{{item.imgUrl}}'></image>
+    </view>
+     <text class='name'>{{item.topicId}}</text> 
+   </view>
+ 
+  </view>
+</view>

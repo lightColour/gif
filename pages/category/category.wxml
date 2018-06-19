@@ -1,0 +1,134 @@
+<!--index.wxml-->
+<view class="index">
+  <view class='index-nav'>
+    <scroll-view class="scroll-view" scroll-x="true" >
+      <view wx:for="{{navItems}}" wx:key='key'  data-index="{{index}}"  bindtap="navChange" class='index-nav-item {{index === navActive ? "index-nav-active" : ""}}'>
+        {{item.Name}}
+        <view class='nav-bottom-wrap'>
+          <view class='nav-bottom-indicator'></view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='index-content' style='height:{{contentHeight}}'>
+    <swiper  bindchange="swiperChange" current="{{navActive}}">
+      <swiper-item>
+        <scroll-view  bindscrolltolower='tonewfocus'  class="rec-container" scroll-y>
+          <view class="block block-category bg-white">
+            <view class="title">熊猫金馆长</view>
+            <view class="weui-flex">
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+                </view>
+            </view>
+        </view>
+        <view class="block block-category bg-white">
+            <view class="title">熊猫金馆长</view>
+            <view class="weui-flex">
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+                </view>
+            </view>
+        </view>
+        <view class="block block-category bg-white">
+            <view class="title">熊猫金馆长</view>
+            <view class="weui-flex">
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+                </view>
+            </view>
+        </view>
+        <view class="block block-category bg-white">
+            <view class="title">熊猫金馆长</view>
+            <view class="weui-flex">
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
+                </view>
+                <view class="weui-flex__item">
+                    <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+                </view>
+            </view>
+        </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view bindscrolltoupper='refresh'  id='animate' data-id='{{navItems[1].ID}}' bindscrolltolower='tonew' class="song-container" scroll-y>
+          <view class="block block-category bg-white">
+            <view class="title">熊猫金馆长</view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
+                  </view>
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
+                  </view>
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+                  </view>
+              </view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+      <scroll-view data-id='{{navItems[2].ID}}' bindscrolltolower='tonew' class="song-container" scroll-y>
+        <view class="block block-category bg-white">
+            <view class="title">熊猫金馆长</view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
+                  </view>
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
+                  </view>
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+                  </view>
+              </view>
+          </view>
+          <view wx:if='{{isbottom[2]}}' class='loading'>加载完成！</view>
+          <view wx:if='{{!isbottom[2]}}' class='loading'>正在加载中...</view>
+      </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <scroll-view data-id='{{navItems[3].ID}}' bindscrolltolower='tonew' class="song-container" scroll-y>
+          <view class="block block-category bg-white">
+            <view class="title">熊猫金馆长</view>
+              <view class="weui-flex">
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
+                  </view>
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
+                  </view>
+                  <view class="weui-flex__item">
+                      <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+                  </view>
+              </view>
+          </view>
+      </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <image bindtap='toSearch' class='search-img' src='../../img/btn_search@3x.png' mode='widthFix'></image>
+</view>

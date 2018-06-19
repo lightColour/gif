@@ -1,0 +1,99 @@
+<!--pages/search/search.wxml-->
+<view class='main'>
+  <view>
+    <loading wx:if='{{isLoadingShow}}'>
+      搜索中...
+    </loading>
+    <loading wx:if='{{isNoNetwork}}'>
+      网络不给力,请检查网络设置!
+    </loading>
+  </view>
+  <view class="search-bar">
+    <view>
+      <icon class='search-icon' type='search' size='20'></icon>
+      <input type='text' placeholder='{{DefaultWord}}' value='{{value}}' bindinput='searchInput' name='KW'></input>
+      <icon class='clear-icon' type='clear' size='20' bindtap='clearInput' wx:if='{{isClearBtnShow}}'></icon>
+    </view>
+    <text bindtap='toSearch' data-txt='{{-1}}'>搜索</text>
+  </view> 
+  <view class="container">
+    <!-- 未搜索到内容展示模块 -->
+    <block wx:if='{{isNoResult}}'>
+      <view class='noresult-poster'>
+        <image src='../../img/icon_noresult@2x.png' mode='widthFix'></image>
+      </view>
+      <text class='main-prompt'>脑洞突破天际了，没有搜索到相关内容</text>
+      <text class='sub-prompt'>可以尝试下热门搜索</text>
+      <view class='cut-line'></view>
+    </block>
+    <!-- 初始搜索页面 -->
+    <block wx:if="{{isAllShow}}">
+      <!-- 历史搜索 -->
+      <view wx:if="{{isHistoryShow}}" class="history-search">
+        <view class="search-title">
+          <image src='../../img/icon_history_small.png' mode='widthFix' class='icon-history'></image>
+          <text>历史搜索</text>
+          <text class="del-all" bindtap='clearHistory'>清空</text>
+        </view>
+        <view class='search-container'>
+          <view class="history-item" wx:for="{{historySearchItems}}" wx:key="historyItem" wx:if='{{index<6}}'>
+            <text bindtap='toSearch' data-txt='{{item}}' class='search-kw'>{{item}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 热门搜索 -->
+      <view class="hot-search">
+        <view class="search-title">
+          <image src='../../img/icon_hotsearch.png' mode='widthFix' class='icon-history'></image>
+          <text>热门搜索</text>
+        </view>
+        <view class='search-container-hot'>
+          <view class="hot-item" wx:for="{{hotSearchItems}}" wx:key="*this">
+          <view class='hot-item-txt'>
+            <text bindtap='toSearch' data-txt='{{item}}'>{{item}}</text>
+          </view>
+            <image wx:if="{{index<2}}" src='../../img/icon_hotlabel.png' mode='widthFix'></image>
+          </view>
+        </view>
+      </view>
+    </block>
+    <!-- 搜索结果模块 -->
+    <block wx:if="{{!isNoResult}}">
+      <!-- 专辑列表 -->
+      <view class="topic-list" wx:if='{{isTopicShow}}'>
+        <view class='mark-title'>专辑</view>
+        <view class='res-item' wx:for="{{topicList}}" wx:key="topic" data-TopicId='{{item.ID}}' data-SongId='{{-1}}' bindtap='toPlay'>
+          <view class='poster'>
+            <image class='poster-img' src='{{item.Img}}' mode='widthFix'></image>
+          </view>
+          <view class='info'>
+            <text>{{item.Name}}</text>
+            <view class='sub-info'>
+              <text class='info-type'>{{item.Type==2?"动画":"儿歌"}}</text>
+              <text>共{{item.VideoCount}}集</text>
+            </view>
+          </view>
+        </view>
+      <!-- 分割线 -->
+      <view class='cut-line'></view>
+      </view>
+      <!-- 单曲列表 -->
+      <view class="song-list" wx:if='{{isMediaShow}}'>
+        <view class='mark-title'>视频</view>
+        <view class='res-item' wx:for="{{songList}}" wx:key="song" data-SongId='{{item.MediaID}}' data-TopicId='{{item.TopicID}}' bindtap='toPlay'>
+          <view class='poster'>
+            <image class='poster-img' src='{{item.Img}}' mode='widthFix'></image>
+          </view>
+          <view class='info'>
+            <text class='info-type'>第{{item.No}}集</text>
+            <text>{{item.Name}}</text>
+            <view class='sub-info'>
+              <text>{{item.TopicName}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='is-no-more' wx:if='{{isNoMore}}'>没有更多内容了</view>
+    </block>
+  </view>
+</view>

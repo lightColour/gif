@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "index-nav": "../../components/nav/nav",
+    "index-rec": "../../components/rec/rec",
+    "index-song-item": "../../components/songitem/songitem"
+  },
+  "backgroundTextStyle": "dark"
+}

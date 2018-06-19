@@ -1,0 +1,6 @@
+<view class='index-nav'>
+  <view wx:for="{{navItems}}" data-index="{{index}}" wx:key="{{index}}" bindtap="navChange" class='index-nav-item {{index === navActive ? "index-nav-active" : ""}}'>
+    {{item}}
+    <view class='nav-bottom-indicator'></view>
+  </view>
+</view>
