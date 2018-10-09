@@ -1,0 +1,41 @@
+.block .yoo-flex__item {
+  margin: 20rpx 0;
+}
+
+.popup {
+  height: 500rpx;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background-color: #fafafa;
+  overflow: hidden;
+}
+
+.popup .content {
+  width: 750rpx;
+  height: 490rpx;
+  margin-top: 10rpx;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  background-color: #eee;
+}
+
+.popup .img {
+  height: 390rpx;
+  justify-content: center;
+}
+
+.popup image {
+  width: 280rpx;
+}
+
+/* .popup .icons {
+  height: 60rpx;
+}*/
+
+.popup .row {
+  /* height: 220rpx; */
+}
+
+.popup .col {
+  text-align: center;
+}

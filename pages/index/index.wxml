@@ -1,128 +1,40 @@
-<!--index.wxml-->
+<!-- index.wxml -->
 <view class="page">
-    <view class="page__bd">
-        <view class="weui-search-bar">
-            <view class="weui-search-bar__form">
-                <view class="weui-search-bar__box">
-                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
-                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-                        <icon type="clear" size="14"></icon>
-                    </view>
-                </view>
-                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
-                    <icon class="weui-icon-search" type="search" size="14"></icon>
-                    <view class="weui-search-bar__text">搜索</view>
-                </label>
-            </view>
-            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    <swiper indicator-dots="true" indicator-active-color="#fff">
+        <block wx:for="{{imgUrls}}" wx:for-index="idx" wx:key="idx">
+            <swiper-item>
+                <image src="{{item.img_url}}" class="slide-image" mode="widthFix" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="category yoo-flex">
+        <view class="yoo-flex__item yoo-flex cate-item">
+            <view class="yoo-icon yoo-icon-list"></view>
+            <view class="title">排行</view>
         </view>
-        <view class="weui-cells searchbar-result" wx:if="{{inputVal.length > 0}}">
-            <!--<navigator url="" class="weui-cell" hover-class="weui-cell_active">
-                <view class="weui-cell__bd">
-                    <view>实时搜索文本</view>
-                </view>
-            </navigator> -->
-        </view>
-    </view>
-    <view class="banner weui-flex bg-white">
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
-            <view class="title">熊猫头</view>
-        </view>
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='../../static/meme/20180520000020.jpg' mode='aspectFill'></image>
-            <view class="title">可爱表情</view>
-        </view>
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='../../static/meme/20180520111202.gif' mode='aspectFill'></image>
-            <view class="title">萌宠</view>
-        </view>
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
-            <view class="title">蘑菇头</view>
-        </view>
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
-            <view class="title">熊猫头</view>
-        </view>
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
-            <view class="title">权律二</view>
-        </view>
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='../../static/meme/20180520111202.gif' mode='aspectFill'></image>
-            <view class="title">萌宠</view>
-        </view>
-        <view class="weui-flex__item">
-            <image lazy-load='false' src='http://filebz01.313515.com/g1/M00/17/6C/CilEmVe2g2iACSzGAAAZIAX0doI443.jpg' mode='aspectFill'></image>
-            <view class="title">蘑菇头</view>
-        </view>
-    </view>
-    <!-- <view class="weui-flex bg-pink">
-        <view class="weui-flex__item"><view class="placeholder">金馆长</view></view>
-        <view class="weui-flex__item"><view class="placeholder">蘑菇头</view></view>
-        <view class="weui-flex__item"><view class="placeholder">熊猫头</view></view>
-        <view class="weui-flex__item"><view class="placeholder">宠物</view></view>
-    </view> -->
-    <!-- 时下最火 -->
-    <view class="block block-hot bg-white">
-        <view class="title">时下最火</view>
-        <view class="weui-flex">
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
-                <view class="title">蘑菇头</view>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
-                <view class="title">熊猫头</view>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
-                <view class="title">权律二</view>
-            </view>
+        <view class="yoo-flex__item yoo-flex cate-item">
+            <view class="yoo-icon yoo-icon-list"></view>
+            <view class="title">分类</view>
         </view>
     </view>
     <!-- 分类 -->
-    <view class="block block-category bg-white">
-        <view class="title">熊猫金馆长</view>
-        <view class="weui-flex">
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+    <view class="block block-category">
+        <view class="yoo-icon yoo-icon-rec"></view>
+        <view class="title">原创表情</view>
+        <view class="yoo-flex">
+            <view class="yoo-flex__item" wx:for="{{original}}" wx:for-index="idx" wx:key="idx">
+                <image lazy-load="true" src="{{item.icon}}" mode="aspectFill"></image>
+                <view class="name">{{item.name}}</view>
             </view>
         </view>
     </view>
-    <view class="block block-category bg-white">
-        <view class="title">熊猫金馆长</view>
-        <view class="weui-flex">
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
-            </view>
-        </view>
-    </view>
-    <view class="block block-category bg-white">
-        <view class="title">熊猫金馆长</view>
-        <view class="weui-flex">
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/20180520111212.jpg' mode='aspectFill'></image>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/a421444a20a446233bd0bada9422720e0cf3d777.jpg' mode='aspectFill'></image>
-            </view>
-            <view class="weui-flex__item">
-                <image lazy-load='false' src='../../static/meme/5d6034a85edf8db11498fa0f0523dd54564e7423.jpg' mode='aspectFill'></image>
+    <view class="block block-category">
+        <view class="yoo-icon yoo-icon-rec"></view>
+        <view class="title">最新表情</view>
+        <view class="yoo-flex">
+            <view class="yoo-flex__item" wx:for="{{lastest}}" wx:for-index="idx" wx:key="idx" bindtap="navigateTo" data-id="{{item.id}}" data-page="album">
+                <image lazy-load="true" src="{{item.icon}}" mode="aspectFill"></image>
+                <view class="name">{{item.name}}</view>
             </view>
         </view>
     </view>

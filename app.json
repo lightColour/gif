@@ -1,14 +1,15 @@
 {
-  "pages":[
+  "pages": [
+    "pages/album/album",
     "pages/index/index",
     "pages/category/category",
     "pages/custom/custom"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fb7299",
     "navigationBarTitleText": "GIF表情集",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "backgroundColor": "#fff",
@@ -17,7 +18,7 @@
     "color": "#666",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/album/album",
         "iconPath": "static/images/ic_menu_choice_nor.png",
         "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
         "text": "推荐"
@@ -35,5 +36,6 @@
         "text": "自定义"
       }
     ]
-  }
+  },
+  "cloud": true
 }

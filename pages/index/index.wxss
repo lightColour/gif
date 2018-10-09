@@ -3,108 +3,55 @@
   font-size: 24rpx;
   color: #757575;
 }
-
-/*!
- * WeUI v1.1.1 (https://github.com/weui/weui-wxss)
- * Copyright 2017 Tencent, Inc.
- * Licensed under the MIT license
- */
- .weui-search-bar{
-  position:relative;
-  padding:8rpx 20rpx;
-  display:-webkit-box;
-  display:-webkit-flex;
-  display:flex;
-  box-sizing:border-box;
-  background-color: #fb7299;
-}
-.weui-icon-search{margin-right:8px;
-  font-size:inherit
-}
-.weui-icon-search_in-box{position:absolute;
-  left:10px;
-  top:7px
-}
-.weui-search-bar__text{
-  display:inline-block;
-  font-size:14px;
-  vertical-align:middle
-}
-.weui-search-bar__form{
-  position:relative;
-  -webkit-box-flex:1;
-  -webkit-flex:auto;
-  flex:auto;
-  border-radius:5px;
-  background:#fff;
-  border:1rpx solid #e6e6ea
-}
-.weui-search-bar__box{
-  position:relative;
-    padding-left:30px;
-    padding-right:30px;
-    width:100%;
-    box-sizing:border-box;
-    z-index:1
-  }
-  .weui-search-bar__input
-  {height:28px;
-    line-height:28px;
-    font-size:14px
-  }
-  .weui-icon-clear{
-    position:absolute;
-    top:0;
-    right:0;
-    padding:7px 8px;
-    font-size:0
-  }
-  .weui-search-bar__label{
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    z-index:2;
-    border-radius:3px;
-    text-align:center;
-    color:#9b9b9b;
-    background:#fff;
-    line-height:28px
-  }
-  .weui-search-bar__cancel-btn{
-    margin-left:10px;
-    line-height:28px;
-    color:#fff;
-    white-space:nowrap
-  }
-  
-
-.placeholder{
-  margin: 5rpx;
-  padding: 0 10rpx;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.6);
-  height: 60rpx;
-  line-height: 60rpx;
-  border-radius: 6rpx;
+swiper {
+  width: 750rpx;
+  height: 281rpx;
 }
 
-/* banner */
-.banner {
-  padding: 16rpx 20rpx 0;
-  margin-bottom: 10rpx;
-  /* margin: 0 20rpx; */
+.slide-image {
+  width: 100%;
 }
-.banner .weui-flex__item {
-  width: 177.5rpx;
+
+.yoo-icon {
+  display: inline-block;
+  width: 34rpx;
+  height: 34rpx;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.yoo-icon-list {
+  width: 54rpx;
+  height: 54rpx;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAXVBMVEX/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1Sv/1St0NWQ3AAAAHnRSTlMABQ0cICQlJicoU1RVVldsdaSqrK3U1u/x8vP5+vzMhA9jAAAAnklEQVR4XtWS2QrCMBAAx6um1larSQ+j+/+fKSQiqWsJ6IvO24QhsMvyObXzrgYo7CCBwRYPXwJVeKvB9PKkN9G3gAuBAysJNnoF+BB4GNLgEr1Nf5AJ0f0K9sGb94GcgKa7dg0zgRyJzAa3QyYQOW8ygfh2t16gxlT+sijtlOmqS+1g7Bh1tEb596h7UK7uQXl2zPyiZILyfwh+4x7uXXBQj0rBiLQAAAAASUVORK5CYII=);
+}
+
+.category {
+  height: 110rpx;
   margin-bottom: 16rpx;
+  border-bottom: 1rpx solid #ddd;
 }
-.banner image {
-  width: 140rpx;
-  height: 140rpx;
-  margin: 0 9rpx;
-  border-radius: 12rpx;
+
+.category .cate-item {
+  flex: 1;
+  justify-content: center;
+  height: 70rpx;
+  font-size: 30rpx;
+  color: #000;
+
 }
-.banner .title {
+
+.category .cate-item + .cate-item {
+  border-left: 1rpx solid #ddd;
 }
+
+.category .title {
+  display: inline-block;
+  padding-left: 20rpx;
+}
+
+.yoo-icon-rec {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAABGlBMVEX/mSv/xUf/xUf/xUf/xUf/mSv/xUf/xUf/xUf/xUf/xUf/xUf/xUf/mSv/xUf/xUf/mSv/mSv/mSv/mSv/mSv/mSv/xUf/mSv/xUf/mSv/xUf/mSv/mSv/xUf/xUf/mSv/xUf/mSv/mSv/mSv/xUf/xUf/mSv/xUf/mSv/xUf/mSv/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/xUf/mSv/xUf/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/xUf/mSv/mSv/xUf/mSv/mSv/xUf/mSv/xUeS+jpVAAAAXHRSTlMAANT5VgFBV7IN2FQL8E7Wxrwe8v65e2KxHFga7uv6sqtc4WdV6HFrjRablAOoogEGtK8DCr+7Bg/JxgoV0s8PG9sVIuPgHCrq5yQz7S099fI3SPn2QlT8hVbo5jL7/YkAAAECSURBVHhepczVcsMwAETRXWMaaKDMzMzMzMzS//9GJ3I9jmXLL72ve2aRHulYtuWQMMSCrOeYgaWAFYKuSqv4Sw1NtBWwGQi3KoQGwocAjAgNeBxVwA9ArUUHOdIv95d9KuC2CR3IdoYB6BBJIDu9YtHLdZNAT68OovqmCAwIM5CDxJDIArKA4WyQRykbjGE8G0wAk1ngk4A7bQYzJIDZOROYX1AAi0vpYHmFAcDqWhpY32AIsLmVBNs7jAB293Swf8BGgMOjOMgfMw5wctoIzs6pA1xcRuDqmkmAm1IIbu+YBnD/EIDHJ6YDPL/UwesbTQDvH0LazTQDfH3/xHfi3/0C3CbIsfNWG3AAAAAASUVORK5CYII=);
+}
+
+

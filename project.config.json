@@ -5,13 +5,15 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.9.94",
+	"libVersion": "2.2.1",
 	"appid": "wxac625531c9c6852e",
 	"projectname": "GIF%E8%A1%A8%E6%83%85%E9%9B%86",
 	"isGameTourist": false,
+	"cloudfunctionRoot ": "meme",
 	"condition": {
 		"search": {
 			"current": -1,

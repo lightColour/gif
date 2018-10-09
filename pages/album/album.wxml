@@ -1,0 +1,22 @@
+<view class="page">
+  <view class="block block-category">
+    <view class="yoo-flex">
+      <view class="yoo-flex__item" wx:for="{{imgs}}" wx:for-index="idx" wx:key="idx" bindtap="preview">
+        <image lazy-load="false" src="{{item.url}}" mode="aspectFill"></image>
+      </view>
+    </view>
+  </view>
+  <van-popup custom-class="popup" show="{{ show }}" position="bottom" bind:close="onClose">
+    <view class="content">
+      <view class="yoo-flex img">
+        <image lazy-load="false" src="{{'https://www.61up.cn/bqms/static/api/face/image/CFA1473E7F00000100FCB912DE1A1E79/icon_4bf03c977f00000101d125d05948f68e.png'}}" mode="aspectFit" />
+      </view>
+      <van-row gutter="0" custom-class="row">
+        <van-col span="6" custom-class="col"><van-icon name="like" size="54rpx"/></van-col>
+        <van-col span="6" custom-class="col"><van-icon name="wechat" size="54rpx"/></van-col>
+        <van-col span="6" custom-class="col"><van-icon name="alipay" size="54rpx"/></van-col>
+        <van-col span="6" custom-class="col"><van-icon name="success" size="54rpx"/></van-col>
+      </van-row>
+    </view>
+  </van-popup>
+</view>
